@@ -1,0 +1,82 @@
+/* src/index.css — Global styles */
+
+/* Tailwind's three required directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom base styles ─────────────────────── */
+@layer base {
+  body {
+    background-color: #f5f0e8;  /* warm paper tone */
+    color: #1a1612;              /* deep ink */
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* ── Reusable component classes ─────────────── */
+@layer components {
+
+  /* Input / textarea fields */
+  .field {
+    @apply w-full px-4 py-3 rounded-none
+           bg-white border-2 border-ink
+           font-sans text-ink placeholder-stone-400
+           focus:outline-none focus:border-amber-500
+           transition-colors duration-150;
+  }
+
+  /* Primary CTA button */
+  .btn {
+    @apply px-6 py-3 font-semibold text-sm tracking-wide
+           bg-ink text-paper border-2 border-ink
+           shadow-[3px_3px_0px_0px_#d97706]
+           hover:shadow-[5px_5px_0px_0px_#d97706]
+           active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+           transition-all duration-150 cursor-pointer;
+  }
+
+  /* Secondary / outline button */
+  .btn-ghost {
+    @apply px-5 py-2.5 font-semibold text-sm
+           bg-transparent text-ink border-2 border-ink
+           hover:bg-ink hover:text-paper
+           transition-all duration-150 cursor-pointer;
+  }
+
+  /* Task card base */
+  .task-card {
+    @apply bg-white border-2 border-ink p-4
+           shadow-[4px_4px_0px_0px_#1a1612]
+           hover:shadow-[6px_6px_0px_0px_#1a1612]
+           hover:-translate-x-[1px] hover:-translate-y-[1px]
+           transition-all duration-150;
+  }
+
+  /* Overdue task card variant */
+  .task-card-overdue {
+    @apply bg-red-50 border-red-600
+           shadow-[4px_4px_0px_0px_#dc2626]
+           hover:shadow-[6px_6px_0px_0px_#dc2626];
+  }
+
+  /* Completed task card variant */
+  .task-card-done {
+    @apply opacity-60 bg-stone-50;
+  }
+}
+
+/* ── Animations ─────────────────────────────── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeSlideIn 0.25s ease-out forwards;
+}
