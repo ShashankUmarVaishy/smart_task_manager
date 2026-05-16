@@ -30,6 +30,7 @@ app.use(cors({
     "http://localhost:5173",
     "https://smart-task-manager-seven-zeta.vercel.app",
     "http://localhost:4173",
+    "https://smart-task-manager-ivory.vercel.app"
   ],
   credentials: true,
 }));
