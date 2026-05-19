@@ -147,5 +147,5 @@ This application uses a **Stateless JWT + HttpOnly Cookie** security paradigm:
 ---
 
 ## 📄 License
-
+Link 🔗: https://smart-task-manager-ivory.vercel.app
 MIT — Free to use and modify.
